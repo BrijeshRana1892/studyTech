@@ -23,6 +23,13 @@ dotenv.config();
 database.connect();
  
 // Middlewares
+app.use(
+	cors({
+	  origin: "*",
+	  credentials: true, // This allows cookies to be sent with requests
+	})
+  );
+  
 app.use(express.json());
 app.use(cookieParser());
 app.use(
